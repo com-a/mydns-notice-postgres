@@ -1,0 +1,21 @@
+name: create-Image
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    branches:
+      - master
+
+
+jobs:
+  use-reusable-workflow:
+
+    uses: bk-game/docker-python/.github/workflows/image-build.yml@main
+
+    with:
+      name: ${{ github.repository }}
+    secrets:
+      DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+      DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
