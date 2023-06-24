@@ -40,7 +40,7 @@ for fetched_line in cur.fetchall():
     mydns_id = fetched_line['mydns_id']
     mydns_pass = fetched_line['mydns_pass']
     ipv4 = fetched_line['ipv4']
-    ipv6 = fetched_line['ipv4']
+    ipv6 = fetched_line['ipv6']
 
     response = requests.get(url+"?MID="+mydns_id+"&PWD="+mydns_pass+"&IPV4ADDR="+ipv4+"&IPV6ADDR="+ipv6)
 
